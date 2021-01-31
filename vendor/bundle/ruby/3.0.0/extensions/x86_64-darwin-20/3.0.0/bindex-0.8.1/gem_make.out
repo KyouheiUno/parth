@@ -1,0 +1,15 @@
+current directory: /Users/kyoheiuno/Desktop/01_personal_file/06_create_app/parth/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/kyoheiuno/.rbenv/versions/3.0.0/bin/ruby -I /Users/kyoheiuno/.rbenv/versions/3.0.0/lib/ruby/3.0.0 -r ./siteconf20210131-26587-pqcuwm.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kyoheiuno/Desktop/01_personal_file/06_create_app/parth/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/kyoheiuno/Desktop/01_personal_file/06_create_app/parth/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/kyoheiuno/Desktop/01_personal_file/06_create_app/parth/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20210131-26587-ate6i9/skiptrace/internal
