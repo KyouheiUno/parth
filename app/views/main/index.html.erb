@@ -1,8 +1,34 @@
 <div id='main' class="main">
-    <div class='main_title'>Parth</div>
+    <div class='main_title'>Enjoy We are Routein!!</div>
     <div class='main_sub_title'>
         自分の毎日の習慣をリストにしてチェック！<br>
         継続は力なり！
     </div>
-</div>
+    <div class="main_content">
 
+        <div>
+            ログインをしているかを確認して表示を出しわける。
+        </div>
+
+        <% if user_signed_in? %> 
+            <div>
+                <%= current_user.user_name %>
+                <%= current_user.email %>
+            </div>
+        <% end %>
+
+        <div>
+            ログインをする
+        </div>
+        <div>
+            自分のルーティーンを確認する
+        </div>
+        <div>
+            ルーティーンを作成する
+        </div>
+        
+        <div>
+            
+        </div>
+    </div>
+</div>

@@ -1,5 +1,18 @@
 <%# フッター %>
 
-<div id='footer'>
-    <h1>ここはフッターのエリアです。</h1>
+<div id='footer' class="footer">
+    <div class='footer_inner'>
+        <div class='footer_copy'>© 2020-2021 KYOUHEI UNO</div>
+        <div class='footer_hoge'>
+            <div>以下は最後に削除するエリアです。</div>
+            <%= link_to "新規ユーザー登録", new_user_registration_path %>
+            <% if user_signed_in? %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                <%= link_to "編集する", edit_user_registration_path %>
+            <% else %>
+                <%= link_to "ログインする", new_user_session_path %>
+            <% end %>
+
+        </div>
+    </div>
 </div>

@@ -11,8 +11,12 @@
   </head>
 
   <body>
-    <div id='layouts'>
-      <%= yield %>
+    <div id='layouts' class='layouts'>
+      <div class='layouts_inner'>
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+        <%= yield %>
+      </div>
     </div>
     <footer>
       <%= render '/shared/footer'%>
