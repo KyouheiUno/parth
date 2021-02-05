@@ -10,12 +10,11 @@
             ログインをしているかを確認して表示を出しわける。
         </div>
 
-        <% if user_signed_in? %> 
+        
             <div>
-                <%= current_user.user_name %>
-                <%= current_user.email %>
+        
             </div>
-        <% end %>
+        
 
         <div>
             ログインをする
@@ -29,6 +28,22 @@
         
         <div>
             
+        </div>
+
+        <div class="main_outer_box">
+            <div class='main_inner_box'>ユーザーの一覧</div>
+        </div>
+        <div class="main_outer_box">
+            <div class='main_inner_box'>マイルーティーンを確認する</div>
+        </div>
+        <div class="main_outer_box">
+            <div class='main_inner_box'>ルーティーンの一覧を確認する</div>
+        </div>
+        <div class="main_outer_box">
+            <div class='main_inner_box'>ログアウトする</div>
+        </div>
+        <div class="main_outer_box">
+            <div class='main_inner_box'>ログインする</div>
         </div>
     </div>
 </div>

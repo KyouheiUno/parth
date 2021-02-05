@@ -1,0 +1,86 @@
+// 共通部分のCSS
+
+//最大幅
+$max_width_value: 1280px;
+//枠の内枠の共通幅
+$common_inner_padding: 15px;
+
+//一番外枠のレイアウト
+.body {
+    background-color: #dcfaff57;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+//共通レイアウト
+.layouts {
+    
+    width: 100%;
+    // position: relative;
+    &_inner {
+        width: $max_width_value;
+        margin: 0 auto;
+        padding: $common_inner_padding;
+    }
+}
+
+//フッター
+.footer {
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    &_inner {
+        width: $max_width_value;
+        padding: $common_inner_padding;
+        margin: 0 auto;
+    }
+    &_copy {
+        color: whitesmoke;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    &_hoge {
+        border-top: 1px solid yellow;
+        a {
+            color: yellow;
+            float: left;
+            padding-left: 10px;
+        }
+    }
+}
+.title {
+    &_page {
+        font-size: large;
+        margin-bottom: 30px;
+    }
+}
+.content {
+    &_text {
+        padding: $common_inner_padding;
+    }
+}
+// これはできれば消したいんですけれどね
+td, th, table {
+    padding: $common_inner_padding;
+    border: 1px solid black;
+}
+
+// フラッシュメッセージ
+.flash {
+    padding: $common_inner_padding;
+    &_notice {
+        background-color: gray;
+    }
+    &_success {
+        background-color: green;
+    }
+    &_warning {
+        background-color: yellow;
+    }
+    &_danger {
+        background-color: red;
+    }
+}

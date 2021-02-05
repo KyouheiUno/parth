@@ -1,0 +1,29 @@
+<div>
+    <div class='title_page'>新規ユーザー登録</div>
+
+    <div class='content_text'>
+        ユーザーを作成します。メールアドレスと<br>
+        ログインの際に使用するパスワードの入力をお願いします。
+    </div>
+    <%= form_for(@user) do |f| %>
+        <div>
+            <%= f.label :email, 'メールアドレス' %>
+            <%= f.text_field :email %>
+        </div>
+        <div>
+            <%= f.label :password, 'パスワード' %>
+            <%= f.password_field :password %>
+        </div>
+        <div>
+            <%= f.label :password_confirmation, 'パスワード(確認用)' %>
+            <%= f.password_field :password_confirmation %>
+        </div>
+        <div>
+            <%= f.submit %>
+        </div>
+    <% end %>
+
+    <div>
+        アカウント情報は後で変更することが可能です。
+    </div>
+</div>

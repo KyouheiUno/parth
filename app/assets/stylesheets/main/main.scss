@@ -1,0 +1,26 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//mainのSCSS
+.main{
+    width: 100%;
+    border: 1px solid gray;
+    background-color: #dae7ff96;
+    &_title {
+        font-size: 26px;
+    }
+    &_sub_title{
+        font-size: 14px;
+    }
+    &_box{
+        width: 25%;
+        background: red;
+        border: 2px solid black;
+        border-radius: 15px;
+        box-shadow: gray;
+        padding: 10px;
+        box-sizing:border-box;
+        float: left;
+    }
+}

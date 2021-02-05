@@ -1,2 +1,27 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div>
+    <div class='title_page'>ユーザー情報詳細</div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>メールアドレス</th>
+            <th>アイコン画像</th>
+            <th>職業</th>
+            <th>誕生日</th>
+            <th>作成日</th>
+            <th>更新日</th>
+            <th>編集ボタン</th>
+            <th>削除ボタン</th>
+        </tr>
+            <tr>
+                <td><%= @user.id %></td>
+                <td><%= @user.name %></td>
+                <td><%= @user.email %></td>
+                <td><%= @user.image %></td>
+                <td><%= @user.profession %></td>
+                <td><%= @user.birthday %></td>
+                <td><%= @user.created_at %></td>
+                <td><%= @user.updated_at %></td>
+            </tr>
+    </table>
+</div>
