@@ -45,7 +45,6 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザーの削除ができませんでした。"
       redirect_to users_path
     end
-    
   end
 
   private

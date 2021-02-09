@@ -1,0 +1,13 @@
+//レスポンシブ
+@mixin responsive($sp_size: 480px, $tablet_size_min: 768px, $tablet_size_max: 1024px, $pc_size: 1024px,) {
+    /*　（スマートフォンサイズ）画面幅が480pxからはここを読み込む　*/
+    width: 100%;
+    /*　(タブレットサイズ)画面幅が768pxから1024pxまではここを読み込む　*/
+    @media screen and (min-width: $tablet_size_min) {
+        width: 50%;
+    }
+    /*　(PCサイズ)画面幅が1024pxより広い場合はここを読み込む　*/
+    @media screen and (min-width: $pc_size) {
+        width: 25%;
+    }
+}

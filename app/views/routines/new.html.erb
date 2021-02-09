@@ -1,0 +1,86 @@
+<div>
+    <div class='title_page'>新規ルーティーン作成</div>
+
+    <div class='content_text'>
+        ルーティーンカードを作成します。
+    </div>
+    <%= form_for(@routine, url: '/routines/confirm', method: 'GET') do |f| %>
+        <div>
+            <%= f.label :title, 'タイトル' %>
+            <%= f.text_field :title %>
+        </div>
+        <div>
+            <%= f.label :content, '内容' %>
+            <%= f.text_area :content %>
+        </div>
+        <div>
+            <%= f.label :category, 'カテゴリー' %>
+            <%= f.select :category, 
+                [
+                    ["勉強", "study"],
+                    ["運動", "sports"],
+                    ["読書", "reading"],
+                    ["掃除", "clear"],
+                    ["その他", "other"]
+                ],
+                include_blank: "カテゴリーを決めましょう。" 
+            %>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <%= f.label :todo_monday, '月曜日' %>
+                    <%= f.check_box :todo_monday %>
+                </td>
+                <td>
+                    <%= f.label :todo_tuesday, '火曜日' %>
+                    <%= f.check_box :todo_tuesday %>
+                </td>
+                <td>
+                    <%= f.label :todo_wednesday, '水曜日' %>
+                    <%= f.check_box :todo_wednesday %>
+                </td>
+                <td>
+                    <%= f.label :todo_thursday, '木曜日' %>
+                    <%= f.check_box :todo_thursday %>
+                </td>
+                <td>
+                    <%= f.label :todo_friday, '金曜日' %>
+                    <%= f.check_box :todo_friday %>
+                </td>
+                <td>
+                    <%= f.label :todo_saturday, '土曜日' %>
+                    <%= f.check_box :todo_saturday %>
+                </td>
+                <td>
+                    <%= f.label :todo_sunday, '日曜日' %>
+                    <%= f.check_box :todo_sunday %>
+                </td>
+                <td>
+                    <%= f.label :todo_holiday, '祝日' %>
+                    <%= f.check_box :todo_holiday %>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <%= f.label :start_time, '開始時刻' %>
+            <%= f.time_select :start_time, minute_step: 5 %>
+        </div>
+        <div>
+            <%= f.label :close_time, '終了時刻' %>
+            <%= f.time_select :close_time, minute_step: 5 %>
+        </div>
+        <div>
+            <%= f.label :routine_image, 'イメージ画像' %>
+            <%= f.file_field :routine_image %>
+        </div>
+        <div>
+            <%= f.submit '確認画面へ' %>
+        </div>
+    <% end %>
+    <div>
+        アカウント情報は後で変更することが可能です。
+    </div>
+</div>
+
+

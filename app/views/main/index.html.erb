@@ -5,39 +5,18 @@
         継続は力なり！
     </div>
     <div class="main_content">
-
-        <div>
-            ログインをしているかを確認して表示を出しわける。
-        </div>
-
-        
-            <div>
-        
+        <div class="main_outer_box">
+            <div class='main_inner_box'>
+                <%= link_to 'ユーザーの一覧確認', users_path, class: 'main_link_btn' %>
             </div>
-        
-
-        <div>
-            ログインをする
-        </div>
-        <div>
-            自分のルーティーンを確認する
-        </div>
-        <div>
-            ルーティーンを作成する
-        </div>
-        
-        <div>
-            
-        </div>
-
-        <div class="main_outer_box">
-            <div class='main_inner_box'>ユーザーの一覧</div>
         </div>
         <div class="main_outer_box">
-            <div class='main_inner_box'>マイルーティーンを確認する</div>
+            <div class='main_inner_box'>マイルーティーン確認</div>
         </div>
         <div class="main_outer_box">
-            <div class='main_inner_box'>ルーティーンの一覧を確認する</div>
+            <div class='main_inner_box'>
+                <%= link_to 'ルーティーンリスト確認', routines_path, class: 'main_link_btn' %>
+            </div>
         </div>
         <div class="main_outer_box">
             <div class='main_inner_box'>ログアウトする</div>

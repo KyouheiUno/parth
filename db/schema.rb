@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_170219) do
+ActiveRecord::Schema.define(version: 2021_02_09_075900) do
+
+  create_table "routines", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "category"
+    t.integer "todo_monday", default: 0
+    t.integer "todo_tuesday", default: 0
+    t.integer "todo_wednesday", default: 0
+    t.integer "todo_thursday", default: 0
+    t.integer "todo_friday", default: 0
+    t.integer "todo_saturday", default: 0
+    t.integer "todo_sunday", default: 0
+    t.integer "todo_holiday", default: 0
+    t.time "start_time"
+    t.time "close_time"
+    t.string "routine_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category"], name: "index_routines_on_category"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

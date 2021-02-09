@@ -1,0 +1,47 @@
+<div>
+    <div class='title_page'>ルーティーン 一覧</div>
+    <% if !@routines.empty? %>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>内容</th>
+                <th>カテゴリー</th>
+                <th>月曜日</th>
+                <th>火曜日</th>
+                <th>水曜日</th>
+                <th>木曜日</th>
+                <th>金曜日</th>
+                <th>土曜日</th>
+                <th>日曜日</th>
+                <th>祝日</th>
+                <th>開始時刻</th>
+                <th>終了時刻</th>
+                <th>削除ボタン</th>
+            </tr>
+            <% @routines.each do |routine| %>
+                <tr>
+                    <td><%= link_to routine.id, routine %></td>
+                    <td><%= routine.title %></td>
+                    <td><%= routine.content %></td>
+                    <td><%= routine.category %></td>
+                    <td><%= routine.todo_monday %></td>
+                    <td><%= routine.todo_tuesday %></td>
+                    <td><%= routine.todo_wednesday %></td>
+                    <td><%= routine.todo_thursday %></td>
+                    <td><%= routine.todo_friday %></td>
+                    <td><%= routine.todo_saturday %></td>
+                    <td><%= routine.todo_sunday %></td>
+                    <td><%= routine.todo_holiday %></td>
+                    <td><%= routine.start_time %></td>
+                    <td><%= routine.close_time %></td>
+                    <td><%= link_to '削除をする', routine, method: :delete %></td>
+                </tr>
+            <% end %>
+        </table>
+    <% else %>
+        <div>
+            投稿されているルーティーンはありません
+        </div>
+    <% end %>
+</div>

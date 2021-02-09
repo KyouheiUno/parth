@@ -1,6 +1,6 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+//インポートファイル
+@import "/common/responsive";
+@import "/common/box_card";
 
 //mainのSCSS
 .main{
@@ -13,14 +13,22 @@
     &_sub_title{
         font-size: 14px;
     }
-    &_box{
-        width: 25%;
-        background: red;
-        border: 2px solid black;
-        border-radius: 15px;
-        box-shadow: gray;
-        padding: 10px;
-        box-sizing:border-box;
+    &_outer_box{
         float: left;
+        @include responsive;
+    }
+    &_inner_box{
+        margin: 15px;
+        padding: 15px;
+        background: white;
+        box-sizing:border-box;
+        height: 100px;
+        @include box_card;
+    }
+    &_link_btn {
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        height: 100%;
     }
 }
