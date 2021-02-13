@@ -16,7 +16,6 @@ $common_inner_padding: 15px;
 
 //共通レイアウト
 .layouts {
-    
     width: 100%;
     // position: relative;
     &_inner {
@@ -87,4 +86,19 @@ td, th, table {
     &_danger {
         background-color: red;
     }
+}
+
+//共通クラスのSCSS
+.common {
+    .c{
+        &_personal_card {
+            width: 100%;
+            background: red;
+        }
+    }
+}
+
+.hoge {
+    width: 100%;
+    height: 80px;
 }

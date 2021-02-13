@@ -5,7 +5,6 @@
 //mainのSCSS
 .main{
     width: 100%;
-    border: 1px solid gray;
     background-color: #dae7ff96;
     &_title {
         font-size: 26px;
@@ -14,7 +13,6 @@
         font-size: 14px;
     }
     &_outer_box{
-        float: left;
         @include responsive;
     }
     &_inner_box{

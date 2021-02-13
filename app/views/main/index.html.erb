@@ -4,6 +4,13 @@
         自分の毎日の習慣をリストにしてチェック！<br>
         継続は力なり！
     </div>
+    <% if @current_user_signed == true %>
+    <div class="hoge">
+        <div class='c_personal_card'>
+            パーシャルで呼び出す予定です
+        </div>
+    </div>
+    <% end %>
     <div class="main_content">
         <div class="main_outer_box">
             <div class='main_inner_box'>

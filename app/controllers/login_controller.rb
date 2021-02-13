@@ -1,7 +1,9 @@
 class LoginController < ApplicationController
 
-    Befor
-
+    before_action :get_signed_user_data
+    #すでにサインインしているならルートパスへリダイレクト
+    before_action :redirect_root, except: :sign_out
+    
     #サインイン画面(メールアドレス入力)
     def sign_in
         @check = cookies[:email]
@@ -70,11 +72,20 @@ class LoginController < ApplicationController
 
     #サインイン情報をcookieに保存する
     def add_cookie_login_date(email)
-        cookies[:email] = email
+        @user = User.find_by(email: email)
+        cookies.signed[:email] = email
+        cookies.signed[:id] = @user.get_from_email_to_id(email)
     end
 
     #cookieのサインイン情報を削除する
     def delete_cookie_login_date(email)
         cookies.delete :email
+        cookies.delete :id
+    end
+
+    #before_actionメソッド
+    #[WIP]サインインしており、サインアウト以外のメソッドを実行する場合はリダイレクト
+    def redirect_root
+        # redirect_to root_path if LoginHelper.user_signed?
     end
 end
