@@ -1,0 +1,17 @@
+<div class=login>
+    <div class='login_sign_in_title'>サインイン</div>
+    <div>登録したアカウントの<br>メールアドレス・パスワードを入力しましょう!</div>
+    <%= form_tag login_sign_in_check_path do |form| %>
+        <div>
+            <%= label_tag :メールアドレス %>
+            <%= email_field_tag :email %>
+        </div>
+        <div>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+        </div>
+        <div>
+            <%= submit_tag "サインインする" %>
+        </div>        
+    <% end %>
+</div>

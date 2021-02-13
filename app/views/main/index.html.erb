@@ -19,10 +19,14 @@
             </div>
         </div>
         <div class="main_outer_box">
-            <div class='main_inner_box'>ログアウトする</div>
+            <div class='main_inner_box'>
+                <%= link_to 'ログインする', login_sign_in_path, class: 'main_link_btn' %>
+            </div>
         </div>
         <div class="main_outer_box">
-            <div class='main_inner_box'>ログインする</div>
+            <div class='main_inner_box'>
+                <%= link_to 'ログアウトする', login_sign_out_path, method: :delete, class: 'main_link_btn' %>
+            </div>
         </div>
     </div>
 </div>
