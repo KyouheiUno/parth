@@ -1,0 +1,40 @@
+<div>
+    <div class='title_page'>professionテーブル一覧</div>
+    <div class='inner'>
+        <div>職業テーブルの情報編集ページ</div>
+    </div>
+    <table>
+        <% unless @professions.blank? %>
+            <tr>
+                <th>id</th>
+                <th>職業名</th>
+                <th>職業カテゴリー</th>
+                <th>削除する</th>
+            </tr>
+            <% @professions.each do |profession| %>
+            <tr>
+                <td><%= profession.id %></td>
+                <td><%= profession.profession_name %></td>
+                <td><%= profession.profession_category%></td>
+                <td><%=link_to "削除する", profession, method: :delete %></td>
+            </tr>
+            <% end %>
+        <% end %>
+    </table>
+    <div class="inner">
+        <div>新規職業作成フォーム</div>
+        <%= form_tag(professions_path, method: :post) do %>
+        <div>
+            <%= label_tag :profession_name, '職業名' %>
+            <%= text_field_tag :profession_name, "" %>
+        </div>
+        <div>
+            <%= label_tag :profession_category, '職業カテゴリー' %>
+            <%= text_field_tag :profession_category, "" %>
+        </div>
+        <div>
+            <%= submit_tag "作成する" %>
+        </div>
+    <% end %>
+    </div>
+</div>

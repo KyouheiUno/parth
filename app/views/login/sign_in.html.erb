@@ -3,7 +3,7 @@
     <div>登録したアカウントの<br>メールアドレス・パスワードを入力しましょう!</div>
     <%= form_tag login_sign_in_check_path do |form| %>
         <div>
-            <%= label_tag :メールアドレス %>
+            <%= label_tag :email %>
             <%= email_field_tag :email %>
         </div>
         <div>

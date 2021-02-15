@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_075900) do
+ActiveRecord::Schema.define(version: 2021_02_14_172157) do
+
+  create_table "professions", force: :cascade do |t|
+    t.text "profession_name"
+    t.integer "profession_category"
+    t.index ["profession_name"], name: "index_professions_on_profession_name", unique: true
+  end
 
   create_table "routines", force: :cascade do |t|
     t.string "title"
@@ -41,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_075900) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "gender"
+    t.integer "profession_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

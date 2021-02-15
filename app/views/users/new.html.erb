@@ -7,8 +7,20 @@
     </div>
     <%= form_for(@user) do |f| %>
         <div>
+            <%= f.label :name, 'お名前' %>
+            <%= f.text_field :name %>
+        </div>
+        <div>
             <%= f.label :email, 'メールアドレス' %>
             <%= f.text_field :email %>
+        </div>
+        <div>
+            <%= f.label :gender, '性別' %>
+            <%= f.select :gender, [['男性', '男性'], ['女性', '女性'], ['その他', 'その他']], { selected: "その他" } %>
+        </div>
+        <div>
+            <%= f.label :profession_id, '職業' %>
+            <%= f.select :profession_id, [['エンジニア', 1], ['教師', 2], ['警察官', 3]], { selected: 1 } %>
         </div>
         <div>
             <div>パスワードは72文字以内で入力をお願いします。</div>
@@ -28,3 +40,5 @@
         アカウント情報は後で変更することが可能です。
     </div>
 </div>
+
+<%# 実装メモ 誕生月のフォームを追加すること %>

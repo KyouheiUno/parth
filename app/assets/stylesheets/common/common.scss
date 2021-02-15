@@ -1,5 +1,8 @@
 // 共通部分のCSS
 
+//インポートファイル
+@import "/common/box_card";
+
 //最大幅
 $max_width_value: 1280px;
 //枠の内枠の共通幅
@@ -92,13 +95,12 @@ td, th, table {
 .common {
     .c{
         &_personal_card {
-            width: 100%;
-            background: red;
+            width: 33%;
+            height: 100px;
+        }
+        &_inner {
+            margin: 10px;
+            padding: 10px;
         }
     }
-}
-
-.hoge {
-    width: 100%;
-    height: 80px;
 }

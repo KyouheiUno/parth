@@ -2,7 +2,7 @@ class User < ApplicationRecord
     #パスワードを暗号化して表示するための記述
     has_secure_password validations: true
 
-    validates :mail, presence: true, uniqueness: true
+    validates :email, presence: true, uniqueness: true
     
     #メールアドレスからユーザーIDを取得するメソッド
     def get_from_email_to_id(target_value)

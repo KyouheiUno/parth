@@ -14,7 +14,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  #新規ユーザーのDB登録処理
   def create
+    byebug
     @user = User.new(user_params)
     #新規ユーザー登録が成功したらindexページへリダイレクトする
     if @user.save
@@ -47,10 +49,18 @@ class UsersController < ApplicationController
     end
   end
 
+  if Rails.env.development?
+    def destroy_all
+      #ユーザーの情報をすべて削除
+      User.destroy_all
+      redirect_to users_path
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :image, :profession, :birthday, :password_digest)
+    params.require(:user).permit(:name, :email, :password, :image, :profession, :birthday, :password_digest, :gender, :profession_id )
   end
 end
 

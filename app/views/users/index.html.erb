@@ -23,9 +23,15 @@
                 <td><%= user.birthday %></td>
                 <td><%= user.created_at %></td>
                 <td><%= user.updated_at %></td>
+                <td><%= link_to '編集をする', user %></td>
                 <td><%= link_to '削除をする', user, method: :delete %></td>
-                <td><%= user.updated_at %></td>
             </tr>
         <% end %>
     </table>
+    <div class='c_inner'>ーーーー以下はdevelopment環境でのみ表示される処理ーーーー</div>
+    <div>
+        <% if Rails.env.development? %>
+            <%= link_to 'ユーザーを全て削除する', destroy_all_users_path, method: :delete, data: { confirm: "ユーザーを全て削除します。よろしいでしょうか？"} %>
+        <% end %>
+    </div>
 </div>

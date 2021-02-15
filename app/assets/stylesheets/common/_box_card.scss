@@ -1,9 +1,13 @@
 //ボックスカードの枠のデザイン
-@mixin box_card($box_card_shadow: 0.4) {
+@mixin box_border($box_card_shadow: 0.4) {
     border-top: 1px solid #737373;
     border-right: 3px solid #737373;
     border-left: 1px solid #737373;
     border-bottom: 3px solid #737373;
     border-radius: 15px;
     box-shadow: 10px 10px 10px rgba(0,0,0,$box_card_shadow); 
+}
+
+.box_border {
+    @include box_border;
 }
