@@ -3,12 +3,13 @@
         <div class='footer_copy'>© 2020-2021 KYOUHEI UNO</div>
         <div class='footer_hoge'>
             <div>以下は最後に削除するエリアです。</div>
+            <%= link_to 'HOME', root_path %>
             <%= link_to 'ユーザー新規作成', new_user_path %>
             <%= link_to 'ユーザー一覧表示', users_path %>
             <%= link_to 'ルーティーンカード一覧表示', routines_path %>
             <%= link_to 'ルーティーンカード作成', new_routine_path %>
             <%= link_to 'ログインする', login_sign_in_path %>
-            <%= link_to 'ログアウトする', login_sign_out_path %>
+            <%= link_to 'ログアウトする', login_sign_out_path, method: :delete %>
             <%= link_to '職業作成', professions_path %>
         </div>
     </div>

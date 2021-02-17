@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'profession_users/create'
-  #ルート
+  #ルートパス
   root to: "main#index"
 
   #ユーザー

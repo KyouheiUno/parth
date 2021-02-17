@@ -37,7 +37,6 @@ class LoginController < ApplicationController
         redirect_to root_path
     end
 
-    #以下はプライベートメソッド
     private
 
     #サインイン成功時の処理

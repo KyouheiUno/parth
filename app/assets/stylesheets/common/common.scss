@@ -1,6 +1,3 @@
-// 共通部分のCSS
-
-//インポートファイル
 @import "/common/box_card";
 
 $basic-color: #616161;
@@ -93,12 +90,7 @@ td, th, table {
 }
 
 //共通クラスのSCSS
-
 .c{
-    &_personal_card {
-        width: 33%;
-        height: 100px;
-    }
     &_inner {
         margin: 10px;
         padding: 10px;
@@ -156,6 +148,20 @@ input[type=submit] {
     }
 }
 
+//タグ
 p {
     padding: 4px;
+}
+
+//外枠
+.frame{
+    padding: 4px;
+    margin: 4px;
+}
+
+.aaa {
+    border: 1px solid red;
+}
+.bbb {
+    border: 1px solid blue;
 }

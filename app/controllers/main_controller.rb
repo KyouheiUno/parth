@@ -8,6 +8,9 @@ class MainController < ApplicationController
         @user_id = cookies.signed[:id]
     end
 
+    def edit
+    end
+
 
 
 

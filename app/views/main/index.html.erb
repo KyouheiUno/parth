@@ -1,37 +1,12 @@
-<div id='main' class="main">
-    <div class='main_title'>Enjoy We are Routein!!</div>
-    <div class='main_sub_title'>
+<div class="row">
+    <div class='frame_title'>Enjoy We are Routein!!</div>
+    <div class='frame_sub_title'>
         自分の毎日の習慣をリストにしてチェック！<br>
         継続は力なり！
     </div>
-    <% if @current_user_signed == true %>
-        <div class='c_personal_card box_border'>
-            <%= @current_user_obj.id %>
-            <%= @current_user_obj.name %>
-            <%= @current_user_obj.email %>
-        </div>
-    <% end %>
-    <div class="main_outer_box box_border">
-        <div class='main_inner_box'>
-            <%= link_to 'ユーザーの一覧確認', users_path, class: 'main_link_btn' %>
-        </div>
-    </div>
-    <div class="main_outer_box box_border">
-        <div class='main_inner_box'>マイルーティーン確認</div>
-    </div>
-    <div class="main_outer_box box_border">
-        <div class='main_inner_box'>
-            <%= link_to 'ルーティーンリスト確認', routines_path, class: 'main_link_btn' %>
-        </div>
-    </div>
-    <div class="main_outer_box  box_border">
-        <div class='main_inner_box'>
-            <%= link_to 'ログインする', login_sign_in_path, class: 'main_link_btn' %>
-        </div>
-    </div>
-    <div class="main_outer_box  box_border">
-        <div class='main_inner_box'>
-            <%= link_to 'ログアウトする', login_sign_out_path, method: :delete, class: 'main_link_btn' %>
-        </div>
-    </div>
 </div>
+<% if @current_user_signed == true %>
+<div class="row">
+    <%= render '/shared/personal_card', current_user_obj: @current_user_obj %>
+</div>
+<% end %>

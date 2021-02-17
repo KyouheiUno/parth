@@ -1,0 +1,4 @@
+@mixin common_mp($common_margin: 10px, $common_padding: 10px){
+    margin: $common_margin;
+    padding: $common_padding;    
+}

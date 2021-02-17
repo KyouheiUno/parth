@@ -17,10 +17,9 @@ class ApplicationController < ActionController::Base
         )
     end
 
-    #プライベートメソッド
     private 
 
-    #cookieにidとemailが存在しかつUserモデルから対象のレコードが存在する場合サインイ中と判定する
+    #cookieにidとemailが存在しかつUserモデルから対象のレコードが存在する場合サインイン中と判定する
     def current_user_sign_in?(id, email, object)
         @result_bool = false
         unless (id.blank?) && (email.blank?) && (object.blank?)
