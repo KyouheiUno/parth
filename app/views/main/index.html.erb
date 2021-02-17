@@ -5,31 +5,31 @@
         継続は力なり！
     </div>
     <% if @current_user_signed == true %>
-        <div class='c_inner c_personal_card box_border'>
+        <div class='c_personal_card box_border'>
             <%= @current_user_obj.id %>
             <%= @current_user_obj.name %>
             <%= @current_user_obj.email %>
         </div>
     <% end %>
-    <div class="main_outer_box c_inner box_border">
+    <div class="main_outer_box box_border">
         <div class='main_inner_box'>
             <%= link_to 'ユーザーの一覧確認', users_path, class: 'main_link_btn' %>
         </div>
     </div>
-    <div class="main_outer_box c_inner box_border">
+    <div class="main_outer_box box_border">
         <div class='main_inner_box'>マイルーティーン確認</div>
     </div>
-    <div class="main_outer_box c_inner box_border">
+    <div class="main_outer_box box_border">
         <div class='main_inner_box'>
             <%= link_to 'ルーティーンリスト確認', routines_path, class: 'main_link_btn' %>
         </div>
     </div>
-    <div class="main_outer_box c_inner box_border">
+    <div class="main_outer_box  box_border">
         <div class='main_inner_box'>
             <%= link_to 'ログインする', login_sign_in_path, class: 'main_link_btn' %>
         </div>
     </div>
-    <div class="main_outer_box c_inner box_border">
+    <div class="main_outer_box  box_border">
         <div class='main_inner_box'>
             <%= link_to 'ログアウトする', login_sign_out_path, method: :delete, class: 'main_link_btn' %>
         </div>

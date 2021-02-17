@@ -1,44 +1,36 @@
-<div>
-    <div class='title_page'>新規ユーザー登録</div>
-
-    <div class='content_text'>
-        ユーザーを作成します。メールアドレスと<br>
-        ログインの際に使用するパスワードの入力をお願いします。
-    </div>
+    <div class='page_title'>新規ユーザー登録</div>
     <%= form_for(@user) do |f| %>
-        <div>
-            <%= f.label :name, 'お名前' %>
-            <%= f.text_field :name %>
+        <div class="box_border">
+            <div class="page_content">マイプロフィールを作成しましょう！</div>
+            <div class='from_area'>
+                <%= f.label :name, 'お名前', { class: "require" } %>
+                <%= f.text_field :name %>
+            </div>
+            <div class='from_area'>
+                <%= f.label :email, 'メールアドレス', { class: "require" } %>
+                <%= f.text_field :email %>
+            </div>
+            <div class='from_area'>
+                <%= f.label :password, 'パスワード', { class: "require" } %>
+                <%= f.password_field :password %>
+            </div>
+            <div class='from_area'>
+                <%= f.label :password_confirmation, 'パスワード(確認用)', { class: "require" } %>
+                <%= f.password_field :password_confirmation %>
+            </div>
         </div>
-        <div>
-            <%= f.label :email, 'メールアドレス' %>
-            <%= f.text_field :email %>
+        <div class="box_border">
+            <div class='from_area'>
+                <%= f.label :gender, '性別' %>
+                <%= f.select :gender, [['男性', '男性'], ['女性', '女性'], ['その他', 'その他']], { selected: "その他" } %>
+            </div>
+            <div class='from_area'>
+                <%= f.label :profession_id, '職業' %>
+                <%= f.select :profession_id, [['エンジニア', 16], ['教師', 13], ['警察官', 3]], { selected: 1 } %>
+            </div>
         </div>
-        <div>
-            <%= f.label :gender, '性別' %>
-            <%= f.select :gender, [['男性', '男性'], ['女性', '女性'], ['その他', 'その他']], { selected: "その他" } %>
-        </div>
-        <div>
-            <%= f.label :profession_id, '職業' %>
-            <%= f.select :profession_id, [['エンジニア', 1], ['教師', 2], ['警察官', 3]], { selected: 1 } %>
-        </div>
-        <div>
-            <div>パスワードは72文字以内で入力をお願いします。</div>
-            <%= f.label :password, 'パスワード' %>
-            <%= f.password_field :password %>
-        </div>
-        <div>
-            <%= f.label :password_confirmation, 'パスワード(確認用)' %>
-            <%= f.password_field :password_confirmation %>
-        </div>
-        <div>
-            <%= f.submit %>
+        <div class="box_border">
+            <p>入力が完了したら「作成する」ボタンをクリック！</p>
+            <%= f.submit "作成する" %>
         </div>
     <% end %>
-
-    <div>
-        アカウント情報は後で変更することが可能です。
-    </div>
-</div>
-
-<%# 実装メモ 誕生月のフォームを追加すること %>

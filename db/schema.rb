@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_172157) do
+ActiveRecord::Schema.define(version: 2021_02_16_120104) do
+
+  create_table "profession_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "profession_id", null: false
+    t.index ["profession_id"], name: "index_profession_users_on_profession_id"
+    t.index ["user_id"], name: "index_profession_users_on_user_id"
+  end
 
   create_table "professions", force: :cascade do |t|
     t.text "profession_name"
@@ -48,8 +55,9 @@ ActiveRecord::Schema.define(version: 2021_02_14_172157) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "gender"
-    t.integer "profession_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "profession_users", "professions"
+  add_foreign_key "profession_users", "users"
 end

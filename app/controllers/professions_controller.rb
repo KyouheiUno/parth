@@ -7,9 +7,10 @@ class ProfessionsController < ApplicationController
 
   #職業を登録
   def create
-    @profession = Profession.new()
-    @profession[:profession_name] = params[:profession_name]
-    @profession[:profession_category] = params[:profession_category]
+    @profession = Profession.new(
+      profession_name: params[:profession_name],
+      profession_category: params[:profession_category]
+    )
     
     if @profession.save
       flash[:notice] = "作成しました"

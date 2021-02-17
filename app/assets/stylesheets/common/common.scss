@@ -3,6 +3,7 @@
 //インポートファイル
 @import "/common/box_card";
 
+$basic-color: #616161;
 //最大幅
 $max_width_value: 1280px;
 //枠の内枠の共通幅
@@ -92,15 +93,69 @@ td, th, table {
 }
 
 //共通クラスのSCSS
-.common {
-    .c{
-        &_personal_card {
-            width: 33%;
-            height: 100px;
-        }
-        &_inner {
-            margin: 10px;
-            padding: 10px;
-        }
+
+.c{
+    &_personal_card {
+        width: 33%;
+        height: 100px;
     }
+    &_inner {
+        margin: 10px;
+        padding: 10px;
+    }
+    &_card {
+        border: 1px solid black;
+    }
+}
+
+// フォーム関連
+.from_area {
+    width: 100%;
+    padding: 8px;
+    label {
+        display: block;
+        padding: 4px 8px 4px 0;
+    }
+    input {
+        display: block;
+        padding: 6px 18px;
+        border-radius: 24px;
+        border: 1px solid #73bec1;
+        outline: none;
+        font-size: large;
+        color: $basic_color;
+    }
+}
+
+// 必須アイコン
+.require::after {
+    content: "必須";
+    margin-left: 5px;
+    padding: 3px;
+    font-size: small;
+    color: #ff4162;
+}
+
+.page {
+    &_title {
+        text-align: center;
+    }
+    &_content {
+        text-align: center;
+    }
+}
+
+// ボタン
+input[type=submit] {
+    border-radius: 24px;
+    background-color: #ffc04db5;
+    padding: 4px 16px;
+    font-size: large;
+    &:hover {
+        cursor: pointer;       
+    }
+}
+
+p {
+    padding: 4px;
 }

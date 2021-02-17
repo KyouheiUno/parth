@@ -16,9 +16,7 @@ class UsersController < ApplicationController
 
   #新規ユーザーのDB登録処理
   def create
-    byebug
     @user = User.new(user_params)
-    #新規ユーザー登録が成功したらindexページへリダイレクトする
     if @user.save
       flash[:notice] = "新規ユーザー登録完了です。"
       redirect_to users_path
@@ -39,7 +37,6 @@ class UsersController < ApplicationController
 
   def destroy
     @delete_user = User.find(params[:id])
-    #ユーザーの情報を削除
     if @delete_user.delete
       flash[:danger] = "ユーザーを削除いたしました。"
       redirect_to users_path
@@ -49,9 +46,9 @@ class UsersController < ApplicationController
     end
   end
 
+  #ユーザーの情報をすべて削除
   if Rails.env.development?
     def destroy_all
-      #ユーザーの情報をすべて削除
       User.destroy_all
       redirect_to users_path
     end
@@ -60,7 +57,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :image, :profession, :birthday, :password_digest, :gender, :profession_id )
+    params.require(:user).permit(:name, :email, :password, :image, :birthday, :password_digest, :gender)
   end
-end
 
+end
