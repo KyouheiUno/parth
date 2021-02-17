@@ -1,0 +1,15 @@
+カラムの追加の基本構文
+
+rails generate migration AddOpenFlagToUsers opne_flag: boolean
+rails generate migration RemoveOpenFlagFromUsers opne_flag: boolean
+
+
+コントローラーをフォルダの一つ下に作成したい場合のgコマンド
+rails g controller user::hoges
+＞app/controllers/user/hoges_controller.rb
+
+カラム名の変更のコマンド
+rails generate migration rename_opne_flag_column_to_users
+
+
+rakeタスクを

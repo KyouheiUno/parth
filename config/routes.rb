@@ -4,12 +4,17 @@ Rails.application.routes.draw do
   root to: "main#index"
 
   #ユーザー
-  resources :users do
-    collection do
-      delete 'destroy_all'
-    end
-    member do 
-      post 'logical_deletion_change'
+  resources :users
+
+  #管理者ページ
+  namespace :admin do
+    resources :users do
+      collection do
+        delete 'destroy_all'
+      end
+      member do 
+        post 'open_flag_change'
+      end
     end
   end
 

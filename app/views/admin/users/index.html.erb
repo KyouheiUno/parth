@@ -1,0 +1,43 @@
+<div>
+    <div class='title_page'>管理画面ユーザー 一覧</div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>メールアドレス</th>
+            <th>アイコン画像</th>
+            <th>職業</th>
+            <th>誕生日</th>
+            <th>作成日</th>
+            <th>更新日</th>
+            <th>論理削除</th>
+            <th>削除ボタン</th>
+        </tr>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= link_to user.id, user %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.image %></td>
+                <td><%= user.profession %></td>
+                <td><%= user.birthday %></td>
+                <td><%= user.created_at %></td>
+                <td><%= user.updated_at %></td>
+                <td>
+                    <% if user.open_flag %>
+                        <%= link_to '非公開にする', open_flag_change_admin_user_path(user.id), method: :post %>
+                    <% else %>
+                        <%= link_to '公開させる', open_flag_change_admin_user_path(user.id), method: :post %>
+                    <% end %>
+                </td>
+                <td><%= link_to '削除をする', user, method: :delete %></td>
+            </tr>
+        <% end %>
+    </table>
+    <div class='c_inner'>ーーーー以下はdevelopment環境でのみ表示される処理ーーーー</div>
+    <div>
+        <% if Rails.env.development? %>
+            <%= link_to 'ユーザーを全て削除する', destroy_all_admin_users_path, method: :delete, data: { confirm: "ユーザーを全て削除します。よろしいでしょうか？"} %>
+        <% end %>
+    </div>
+</div> 
