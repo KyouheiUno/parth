@@ -26,11 +26,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:id])
   end
 
-  def update 
-
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = "更新完了しました。"
+    else
+      flash[:notice] = "更新できませんでした。"
+    end
+    redirect_to users_path
   end
 
   private

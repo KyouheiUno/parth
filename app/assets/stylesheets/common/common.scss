@@ -8,11 +8,11 @@ $common_inner_padding: 15px;
 
 //一番外枠のレイアウト
 .body {
-    background-color: #dcfaff57;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 100px;
-    box-sizing: border-box;
+    background-color: white;
+}
+//一番外枠の余白
+.outer {
+    padding: 20px;
 }
 
 //共通レイアウト
@@ -34,8 +34,6 @@ $common_inner_padding: 15px;
 .footer {
     background-color: black;
     width: 100%;
-    position: absolute;
-    bottom: 0px;
     &_inner {
         width: $max_width_value;
         padding: $common_inner_padding;
@@ -44,13 +42,11 @@ $common_inner_padding: 15px;
     &_copy {
         color: whitesmoke;
         text-align: center;
-        padding-bottom: 10px;
     }
     &_hoge {
         border-top: 1px solid yellow;
         a {
             color: yellow;
-            float: left;
             padding-left: 10px;
         }
     }

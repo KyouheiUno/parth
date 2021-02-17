@@ -1,4 +1,4 @@
-<div class='page_title'>新規ユーザー登録</div>
+<div class='page_title'>マイプロフィール編集</div>
 <%= form_for(@user) do |f| %>
   <div class="box_border">
     <div class="page_content">マイプロフィールを作成しましょう！</div>
@@ -14,14 +14,6 @@
       <%= f.label :image, 'アイコン画像' %>
       <%= f.file_field :image %>
     </div>
-    <div class='from_area'>
-      <%= f.label :password, 'パスワード', { class: "require" } %>
-      <%= f.password_field :password %>
-    </div>
-    <div class='from_area'>
-      <%= f.label :password_confirmation, 'パスワード(確認用)', { class: "require" } %>
-      <%= f.password_field :password_confirmation %>
-    </div>
   </div>
   <div class="box_border">
     <div class='from_area'>
@@ -34,7 +26,7 @@
     </div>
   </div>
   <div class="box_border">
-    <p>入力が完了したら「作成する」ボタンをクリック！</p>
-    <%= f.submit "作成する" %>
+    <p>入力が完了したら「編集を完了する」ボタンをクリック！</p>
+    <%= f.submit "編集を完了する" %>
   </div>
 <% end %>
