@@ -14,11 +14,9 @@ input_times = gets.to_i
         name: "テストユーザー#{n}",
         email: "#{n}test@test.com",
         image: nil,
-        profession: nil, 
         birthday: nil,
         password_digest: "test#{n}",
         gender: gender[rand(0..2)],
-        profession_id: 0
     )
     count = count + 1
 end

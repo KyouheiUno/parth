@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def index
-    #ユーザー情報を一覧で取得(降順)
     @users = User.all.order(id: "DESC")
   end
 
@@ -9,12 +8,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  #新規ユーザー登録をするページ
   def new
     @user = User.new
   end
 
-  #新規ユーザーのDB登録処理
   def create
     @user = User.new(user_params)
     if @user.save
@@ -33,6 +30,19 @@ class UsersController < ApplicationController
 
   def update 
 
+  end
+
+  #論理削除の切り替え
+  def logical_deletion_change
+    @logical_deletion_user = User.find(params[:id])
+    if @logical_deletion_user.logical_deletion
+      @logical_deletion_user.update(logical_deletion: false)
+      flash[:notice] = "#{@logical_deletion_user.name}を論理削除を取り消しました"
+    else
+      @logical_deletion_user.update(logical_deletion: true)
+      flash[:notice] = "#{@logical_deletion_user.name}を論理削除しました"
+    end
+    redirect_back(fallback_location: users_path)
   end
 
   def destroy

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     collection do
       delete 'destroy_all'
     end
+    member do 
+      post 'logical_deletion_change'
+    end
   end
 
   #ルーティーン
