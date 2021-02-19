@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
 
+  before_action :require_signed, expect: [:index]
+  before_action :get_user_from_id, only: [:show, :edit, :update]
+  
   def index
     @users = User.all.where(open_flag: true).order(id: "DESC")
   end
 
   def show
-    @user = User.find(params[:id])
+    
   end
 
   def new
@@ -26,11 +29,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "更新完了しました。"
     else
@@ -45,4 +46,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :image, :birthday, :password_digest, :gender)
   end
 
+  def get_user_from_id
+    @user = User.find(params[:id])
+  end
 end

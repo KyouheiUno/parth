@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         post 'open_flag_change'
       end
     end
+    resources :professions, only: [:index, :create, :update, :destroy]
   end
 
   #ルーティーン
@@ -32,9 +33,7 @@ Rails.application.routes.draw do
 
   #管理画面側
   resources :admin do
-    collection do
-      resources :professions, only: [:index, :create, :update, :destroy]
-    end
+    
   end
 
   # routeの基本構文

@@ -29,4 +29,10 @@ class ApplicationController < ActionController::Base
     end
     return @result_bool
   end
+
+  #リダイレクト
+  def require_signed
+    redirect_to root_path unless @current_user_signed
+  end
+
 end
