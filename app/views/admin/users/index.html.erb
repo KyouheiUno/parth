@@ -25,12 +25,12 @@
                 <td><%= user.updated_at %></td>
                 <td>
                     <% if user.open_flag %>
-                        <%= link_to '非公開にする', open_flag_change_admin_user_path(user.id), method: :post %>
+                        <%= link_to '非公開にする', open_flag_change_admin_user_path(user), method: :post %>
                     <% else %>
-                        <%= link_to '公開させる', open_flag_change_admin_user_path(user.id), method: :post %>
+                        <%= link_to '公開させる', open_flag_change_admin_user_path(user), method: :post %>
                     <% end %>
                 </td>
-                <td><%= link_to '削除をする', user, method: :delete %></td>
+                <td><%= link_to '削除をする', admin_user_path(user), method: :delete %></td>
             </tr>
         <% end %>
     </table>

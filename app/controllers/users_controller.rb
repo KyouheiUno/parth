@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :require_signed, expect: [:index]
+  # before_action :require_signed, expect: [:index]
   before_action :get_user_from_id, only: [:show, :edit, :update]
   
   def index

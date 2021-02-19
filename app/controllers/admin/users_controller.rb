@@ -44,18 +44,17 @@ module Admin
         flash[:notice] = "#{@user_open_flag.name}を公開しました"
       end
       redirect_back(fallback_location: users_path)
-    end
 
+    end
     #ユーザーの削除
     def destroy
       @delete_user = User.find(params[:id])
       if @delete_user.delete
         flash[:danger] = "ユーザーを削除いたしました。"
-        redirect_to users_path
       else
         flash[:notice] = "ユーザーの削除ができませんでした。"
-        redirect_to users_path
       end
+      redirect_to admin_users_path
     end
 
     #ユーザーの情報をすべて削除

@@ -1,6 +1,6 @@
 class RoutinesController < ApplicationController
 
-  before_action :get_routine_from_id, only: [:show, :edit, :update, :destory]
+  before_action :get_routine_from_id, only: [:show, :edit, :update, :destroy]
 
   def index
     @routines = Routine.all
@@ -42,13 +42,12 @@ class RoutinesController < ApplicationController
 
   def destroy
     #ルーティーンカードの情報を削除
-    if @delete_routine.delete
+    if @routine.delete
       flash[:danger] = "ルーティーンを削除しました。"
-      redirect_to routines_path
     else
       flash[:notice] = "ルーティーンカードを削除できませんでした。"
-      redirect_to routines_path
     end
+    redirect_to routines_path
   end
 
   private

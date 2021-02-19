@@ -1,16 +1,12 @@
 <div class="col-md-6">
-    <div class="row">
-        <div class="col-md-8">
-            <% if @current_user_obj.image.blank? %>
-                <%= image_tag "icon_default.jpeg", class: "icon_image" %>
-            <% else %>
-                <%= image_tag @current_user_obj.image.url, class: "icon_image" %>
-            <% end %>
-        </div>
-        <div class="col-md-4">
-            <div class="p_card_text">
-                <%= @current_user_obj.name %>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag "icon_default.jpeg", class: "icon_image" %>
     </div>
+    <div class="col-md-4">
+      <div class="p_card_text">
+        
+      </div>
+    </div>
+  </div>
 </div>

@@ -3,7 +3,7 @@ class User < ApplicationRecord
     #リレーション
     has_many :profession_users
     has_many :professions, through: :profession_users
-    has_many :routines
+    has_many :routines, dependent: :destroy
     #パスワードを暗号化して表示する記述
     has_secure_password validations: true
 

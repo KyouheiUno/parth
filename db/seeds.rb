@@ -17,6 +17,7 @@ input_times = gets.to_i
         birthday: nil,
         password_digest: "test#{n}",
         gender: gender[rand(0..2)],
+        open_flag: true
     )
     count = count + 1
 end

@@ -2,11 +2,10 @@
   <div class='title_page'>ユーザー 一覧</div>
     <% @users.each do |user| %>
     <div class="aaa">
-      <div><%= link_to user.id, user %></div>
       <div><%= user.name %></div>
-      <div><%= user.email %></div>
+      <div><%= user.image %></div>
       <div><%= user.profession %></div>
-      <div><%= user.birthday %></div>
+      <div><%= user.gender %></div>
       <div><%=link_to "編集する", edit_user_path(user.id) %></div>
     </div>
     <% end %>
