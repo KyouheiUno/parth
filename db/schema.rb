@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_165623) do
+ActiveRecord::Schema.define(version: 2021_02_19_161019) do
 
   create_table "profession_users", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -42,7 +42,9 @@ ActiveRecord::Schema.define(version: 2021_02_17_165623) do
     t.string "routine_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.index ["category"], name: "index_routines_on_category"
+    t.index ["user_id"], name: "index_routines_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,4 +63,5 @@ ActiveRecord::Schema.define(version: 2021_02_17_165623) do
 
   add_foreign_key "profession_users", "professions"
   add_foreign_key "profession_users", "users"
+  add_foreign_key "routines", "users"
 end

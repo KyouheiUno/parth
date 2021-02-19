@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     return @result_bool
   end
 
-  #リダイレクト
+  #サインインしていない時はリダイレクト
   def require_signed
     redirect_to root_path unless @current_user_signed
   end

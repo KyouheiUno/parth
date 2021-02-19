@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    #　今のところ空
   end
 
   def new
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    #　今のところ空
   end
 
   def update
@@ -42,10 +43,12 @@ class UsersController < ApplicationController
 
   private
 
+  #ストロングパラメータ
   def user_params
     params.require(:user).permit(:name, :email, :password, :image, :birthday, :password_digest, :gender)
   end
 
+  #idからオブジェクトを取得
   def get_user_from_id
     @user = User.find(params[:id])
   end

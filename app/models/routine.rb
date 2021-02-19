@@ -1,4 +1,4 @@
 class Routine < ApplicationRecord
     #リレーション
-    belogns_to :user
+    belongs_to :user
 end

@@ -1,3 +1,19 @@
-<h1>Routines#show</h1>
-<p>Find me in app/views/routines/show.html.erb</p>
-ghjhjkl
+<div>
+    <div class='title_page'>ルーティン情報詳細</div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ルーティン名</th>
+            <th>内容</th>
+            <th>作成日</th>
+            <th>更新日</th>
+        </tr>
+            <tr>
+                <td><%= @routine.id %></td>
+                <td><%= @routine.title %></td>
+                <td><%= @routine.content %></td>
+                <td><%= @routine.created_at %></td>
+                <td><%= @routine.updated_at %></td>
+            </tr>
+    </table>
+</div>

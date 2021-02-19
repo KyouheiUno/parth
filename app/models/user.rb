@@ -1,10 +1,10 @@
 class User < ApplicationRecord
+
     #リレーション
     has_many :profession_users
     has_many :professions, through: :profession_users
-
-    has_many :routine
-    #パスワードを暗号化して表示するための記述
+    has_many :routines
+    #パスワードを暗号化して表示する記述
     has_secure_password validations: true
 
     validates :email, presence: true, uniqueness: true

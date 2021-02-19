@@ -1,10 +1,13 @@
 class RoutinesController < ApplicationController
+
+  before_action :get_routine_from_id, only: [:show, :edit, :update, :destory]
+
   def index
     @routines = Routine.all
-
   end
 
   def show
+    
   end
 
   def new
@@ -19,6 +22,7 @@ class RoutinesController < ApplicationController
 
   def create
     @routine = Routine.new(routine_params)
+    @routine.user_id = @current_user_id
     #新規ユーザー登録が成功したらindexページへリダイレクトする
     if @routine.save
       flash[:notice] = "新規ルーティーン作成完了です。"
@@ -37,7 +41,6 @@ class RoutinesController < ApplicationController
   end
 
   def destroy
-    @delete_routine = Routine.find(params[:id])
     #ルーティーンカードの情報を削除
     if @delete_routine.delete
       flash[:danger] = "ルーティーンを削除しました。"
@@ -50,9 +53,14 @@ class RoutinesController < ApplicationController
 
   private
 
+  #ストロングパラメータ
   def routine_params
-    #routineのストロングパラメータを定義
     params.require(:routine).permit(:title, :content, :category, :todo_monday, :todo_tuesday, :todo_wednesday, :todo_thursday, :todo_friday, :todo_saturday, :todo_sunday,:todo_holiday, :start_time, :close_time, :routine_image)
+  end
+
+  #idからオブジェクト取得
+  def get_routine_from_id
+    @routine = Routine.find(params[:id])
   end
 
 end

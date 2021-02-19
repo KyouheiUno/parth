@@ -4,6 +4,7 @@
         <table>
             <tr>
                 <th>ID</th>
+                <th>作成者</th>
                 <th>タイトル</th>
                 <th>内容</th>
                 <th>カテゴリー</th>
@@ -22,6 +23,7 @@
             <% @routines.each do |routine| %>
                 <tr>
                     <td><%= link_to routine.id, routine %></td>
+                    <td><%= routine.user.name %></td>
                     <td><%= routine.title %></td>
                     <td><%= routine.content %></td>
                     <td><%= routine.category %></td>
