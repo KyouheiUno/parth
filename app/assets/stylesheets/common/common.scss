@@ -8,7 +8,7 @@ $common_inner_padding: 15px;
 
 //一番外枠のレイアウト
 .body {
-    background-color: #fff;
+    background-color:#f7ecf2;
 }
 //一番外枠の余白
 .outer {
@@ -126,7 +126,11 @@ td, th, table {
 
 .page {
     &_title {
-        text-align: center;
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
     }
     &_content {
         text-align: center;
@@ -150,9 +154,10 @@ p {
 }
 
 //外枠
-.frame{
-    padding: 4px;
-    margin: 4px;
+.main_area {
+    background-color: #fff;
+    border: 1px solid #80808030;
+    padding: 10px;
 }
 
 .aaa {
