@@ -1,7 +1,7 @@
 <div class="row">
     <div class="main_area col-md-4 offset-md-4">
-        <div class="page_title">サインイン</div>
-        <div class="py-2">登録したアカウントの<br>メールアドレス・パスワードを入力しましょう!</div>
+        <div class="page_title"><%= t('.title') %></div>
+        <div class="py-2"><%= t('.description') %></div>
         <div class="content"> 
             <%= form_tag login_sign_in_check_path do |form| %>
                 <div class="form-group">
@@ -13,7 +13,7 @@
                     <%= password_field_tag :password, "", class: "form-control col-md-6" %>
                 </div>
                 <div class="form-group pt-3">
-                    <%= submit_tag "サインインする" %>
+                    <%= submit_tag t('.submit_btn') %>
                 </div>        
             <% end %>
         </div>

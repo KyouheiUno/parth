@@ -1,7 +1,5 @@
 class LoginController < ApplicationController
-
     before_action :get_signed_user_data
-    #すでにサインインしているならルートパスへリダイレクト
     before_action :redirect_root, except: :sign_out
     
     #サインイン画面(メールアドレス入力)
@@ -15,19 +13,17 @@ class LoginController < ApplicationController
 
     #サインイン画面(入力値確認)
     def sign_in_check
-        #入力されたメールアドレスとパスワードを取得
         @email = params[:email]
         @password = params[:password]
         @email_result = sign_in_email_check?(@email)
         @password_result = sign_in_password_check?(@email, @password)
-        #メールアドレスとパスワードが両方一致すればサインインする
+        
         if @email_result && @password_result
             sign_in_success(@email)
-            redirect_to root_path
         else
-            redirect_to root_path
             flash[:warning] = "メールアドレスとパスワードが一致するアカウントがありません"
         end
+        redirect_to root_path
     end
 
     #サインアウト画面
@@ -41,25 +37,21 @@ class LoginController < ApplicationController
 
     #サインイン成功時の処理
     def sign_in_success(email)
-        #サインインデータをcookieに保存する
         add_cookie_login_date(email)
         flash[:success] = "サインインしました。"
     end
 
     #ユーザー情報確認(メールアドレス)
     def sign_in_email_check?(email)
-        #Userモデルにユーザーの情報が存在するか確認する
         return User.exists?(email: email)
     end
 
     #ユーザー情報確認(パスワード)
     def sign_in_password_check?(email, password)
-        #ユーザーのメールアドレスとパスワードの両方が一致するか判定する
         @check_result = false
         @user_date_1 = User.find_by(email: email)
         unless @user_date_1.blank?
             @user_date_2 = @user_date_1.authenticate(password)
-            #emailとpasswordからユーザー情報が確認でき、そのemailが両方とも同じならtrueを返す
             if (@user_date_1.blank?) or (@user_date_2 == false)
                 @check_result = false
             else @user_date_1.email === @user_date_2.email

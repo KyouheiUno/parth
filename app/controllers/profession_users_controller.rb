@@ -1,4 +1,3 @@
 class ProfessionUsersController < ApplicationController
 
-  
 end

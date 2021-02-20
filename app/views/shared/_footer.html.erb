@@ -4,21 +4,21 @@
     <% if @current_user_signed == true %>
       <div class="footer_personal_card">      
         <div class="row">
-          <%= render '/shared/personal_card', current_user_obj: @current_user_obj %>
+          <%= render('/shared/personal_card', current_user_obj: @current_user_obj) %>
         </div>        
       </div>
     <% end %>
     <div class='footer_hoge'>
       <div>以下は最後に削除するエリアです。</div>
-      <%= link_to 'HOME', root_path %>
-      <%= link_to 'ユーザー新規作成', new_user_path %>
-      <%= link_to 'ユーザー一覧表示', users_path %>
-      <%= link_to 'ルーティーンカード一覧表示', routines_path %>
-      <%= link_to 'ルーティーンカード作成', new_routine_path %>
-      <%= link_to 'ログインする', login_sign_in_path %>
-      <%= link_to 'ログアウトする', login_sign_out_path, method: :delete %>
-      <%= link_to '職業作成', admin_professions_path %>
-      <%= link_to '管理画面へ', admin_users_path %>
+      <%= link_to('HOME', root_path) %>
+      <%= link_to('ユーザー新規作成', new_user_path) %>
+      <%= link_to('ユーザー一覧表示', users_path) %>
+      <%= link_to('ルーティーンカード一覧表示', routines_path) %>
+      <%= link_to('ルーティーンカード作成', new_routine_path) %>
+      <%= link_to('ログインする', login_sign_in_path) %>
+      <%= link_to('ログアウトする', login_sign_out_path, method: :delete) %>
+      <%= link_to('職業作成', admin_professions_path) %>
+      <%= link_to('管理画面へ', admin_users_path) %>
     </div>
   </div>
 </footer>

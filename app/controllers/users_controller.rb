@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   # before_action :require_signed, expect: [:index]
   before_action :get_user_from_id, only: [:show, :edit, :update]
   
@@ -8,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    #　今のところ空
+
   end
 
   def new
@@ -25,11 +24,10 @@ class UsersController < ApplicationController
       flash[:notice] = "新規ユーザー登録失敗です。"
       render :new
     end
-
   end
 
   def edit
-    #　今のところ空
+
   end
 
   def update

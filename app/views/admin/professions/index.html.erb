@@ -16,7 +16,7 @@
                 <td><%= profession.id %></td>
                 <td><%= profession.profession_name %></td>
                 <td><%= profession.profession_category%></td>
-                <td><%=link_to "削除する", admin_profession_path(profession), method: :delete %></td>
+                <td><%=link_to("削除する", admin_profession_path(profession), method: :delete) %></td>
             </tr>
             <% end %>
         <% end %>

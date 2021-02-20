@@ -22,7 +22,7 @@
             </tr>
             <% @routines.each do |routine| %>
                 <tr>
-                    <td><%= link_to routine.id, routine %></td>
+                    <td><%= link_to(routine.id, routine) %></td>
                     <td><%= routine.user.name %></td>
                     <td><%= routine.title %></td>
                     <td><%= routine.content %></td>
@@ -37,7 +37,7 @@
                     <td><%= routine.todo_holiday %></td>
                     <td><%= routine.start_time %></td>
                     <td><%= routine.close_time %></td>
-                    <td><%= link_to '削除をする', routine, method: :delete %></td>
+                    <td><%= link_to('削除をする', routine, method: :delete) %></td>
                 </tr>
             <% end %>
         </table>

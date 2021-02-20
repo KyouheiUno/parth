@@ -1,6 +1,5 @@
 module Admin
   class ProfessionsController < ApplicationController
-
     #indexのページに新規登録フォームをいれる
     def index
       @professions =  Profession.all
@@ -12,7 +11,6 @@ module Admin
         profession_name: params[:profession_name],
         profession_category: params[:profession_category]
       )
-
       if @profession.save
         flash[:success] = "作成しました"
       else

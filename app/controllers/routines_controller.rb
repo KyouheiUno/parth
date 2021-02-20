@@ -1,5 +1,4 @@
 class RoutinesController < ApplicationController
-
   before_action :get_routine_from_id, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -23,7 +22,7 @@ class RoutinesController < ApplicationController
   def create
     @routine = Routine.new(routine_params)
     @routine.user_id = @current_user_id
-    #新規ユーザー登録が成功したらindexページへリダイレクトする
+
     if @routine.save
       flash[:notice] = "新規ルーティーン作成完了です。"
       redirect_to routines_path
@@ -35,13 +34,15 @@ class RoutinesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+
   end
 
+  #ルーティーンカードの情報を削除
   def destroy
-    #ルーティーンカードの情報を削除
     if @routine.delete
       flash[:danger] = "ルーティーンを削除しました。"
     else
@@ -61,5 +62,4 @@ class RoutinesController < ApplicationController
   def get_routine_from_id
     @routine = Routine.find(params[:id])
   end
-
 end

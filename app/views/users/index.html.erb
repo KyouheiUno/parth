@@ -1,13 +1,14 @@
-<div>
-  <div class='title_page'>ユーザー 一覧</div>
+<div class="row">
+  <div class='title_page col-md-12'><%= t('.title') %></div>
     <% @users.each do |user| %>
-    <div class="aaa">
-      <div><%= user.name %></div>
-      <div><%= user.image %></div>
-      <div><%= user.profession %></div>
-      <div><%= user.gender %></div>
-      <div><%=link_to "編集する", edit_user_path(user.id) %></div>
-    </div>
+      <div class="col-md-3">
+        <%= link_to(user, class: "main_area") do %>
+          <div><%= user.name %></div>
+          <div><%= user.image %></div>
+          <div><%= user.profession %></div>
+          <div><%= user.gender %></div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
